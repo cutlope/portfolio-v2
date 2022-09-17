@@ -1,13 +1,17 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Layout from './_layout'
+import { Header, Tilde } from '@layout'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <main>
+      <div className='mt-4 px-8'>
+        <Tilde />
+      </div>
+      <div className='container mx-auto px-10 md:max-w-xl md:px-0'>
+        <Header />
+        <Component {...pageProps} />
+      </div>
+    </main>
   )
 }
-
-export default MyApp

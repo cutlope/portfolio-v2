@@ -1,7 +1,14 @@
-import { Fragment, ReactNode, useState } from 'react'
+import { Fragment } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import cx from 'classnames'
+import { Popover, Transition } from '@headlessui/react'
+import {
+  SunIcon,
+  MoonIcon,
+  ChevronDownIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline'
 
 let navItems: Array<{ name: string; href: string }> = [
   {
@@ -9,107 +16,172 @@ let navItems: Array<{ name: string; href: string }> = [
     href: '/',
   },
   {
+    name: 'About',
+    href: '/about',
+  },
+  {
     name: 'Projects',
     href: '/projects',
+  },
+  {
+    name: 'Uses',
+    href: '/uses',
   },
   {
     name: 'Contact',
     href: '/contact',
   },
   {
-    name: 'Uses',
-    href: '/uses',
+    name: 'Resume',
+    href: '/resume.pdf',
   },
 ]
 
-interface NavItemProps {
+interface MyLinkProps {
   href: string
-  children: ReactNode
-  asPath: string
+  children: string
+  className?: string
 }
 
-interface BreadcrumbItemProps {
-  isRoot?: boolean
-  children: ReactNode
-  href: string
-  isCurrent?: boolean
+function MyLink({ href, children, ...rest }: MyLinkProps) {
+  return (
+    <Link href={href}>
+      <a {...rest}>{children}</a>
+    </Link>
+  )
 }
 
-interface IBreadcrumb {
+interface MobileNavItemProps {
   href: string
-  label: string
-  isCurrent: boolean
+  children: string
 }
 
-const NavItem = ({ href, children, asPath }: NavItemProps): JSX.Element => {
+function MobileNavItem({ href, children }: MobileNavItemProps) {
   return (
     <li>
-      <Link
-        href={href}
-        className={cx(
-          'hidden rounded-lg px-3 py-1 text-base text-gray-500 transition duration-200 hover:bg-gray-600 hover:bg-opacity-30 md:inline-block',
-          asPath.split('/')[1] === href.replace('/', '') &&
-            'bg-gray-600 bg-opacity-30 font-medium !text-accent hover:bg-opacity-40'
-        )}
-        noGradientUnderline>
+      <Popover.Button as={MyLink} href={href} className='block py-2'>
         {children}
-      </Link>
+      </Popover.Button>
     </li>
   )
 }
 
-const BreadcrumbItem = ({
-  isRoot,
-  children,
-  href,
-  isCurrent,
-}: BreadcrumbItemProps): JSX.Element => (
-  <Fragment>
-    {!isRoot && (
-      <span aria-hidden='true' className='opacity-50'>
-        /
-      </span>
-    )}
-    <li>
-      <Link
-        href={href}
-        className={cx(
-          isCurrent
-            ? 'bg-gradient-to-br from-[#9ebd13] to-[#008552] bg-clip-text font-bold text-transparent'
-            : 'text-gray-300',
-          'transition duration-200 hover:opacity-80'
-        )}
-        aria-current={isCurrent ? 'page' : 'false'}
-        noGradientUnderline>
-        {children}
-      </Link>
-    </li>
-  </Fragment>
-)
+interface NavItemProps {
+  className: string
+}
+
+function MobileNavigation(props: NavItemProps) {
+  return (
+    <Popover {...props}>
+      <Popover.Button className='group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20'>
+        Menu
+        <ChevronDownIcon className='ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400' />
+      </Popover.Button>
+      <Transition.Root>
+        <Transition.Child
+          as={Fragment}
+          enter='duration-150 ease-out'
+          enterFrom='opacity-0'
+          enterTo='opacity-100'
+          leave='duration-150 ease-in'
+          leaveFrom='opacity-100'
+          leaveTo='opacity-0'>
+          <Popover.Overlay className='fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80' />
+        </Transition.Child>
+        <Transition.Child
+          as={Fragment}
+          enter='duration-150 ease-out'
+          enterFrom='opacity-0 scale-95'
+          enterTo='opacity-100 scale-100'
+          leave='duration-150 ease-in'
+          leaveFrom='opacity-100 scale-100'
+          leaveTo='opacity-0 scale-95'>
+          <Popover.Panel
+            focus
+            className='fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800'>
+            <div className='flex flex-row-reverse items-center justify-between'>
+              <Popover.Button aria-label='Close menu' className='-m-1 p-1'>
+                <XMarkIcon className='h-6 w-6 text-zinc-500 dark:text-zinc-400' />
+              </Popover.Button>
+              <h2 className='text-sm font-medium text-zinc-600 dark:text-zinc-400'>
+                Navigation
+              </h2>
+            </div>
+            <nav className='mt-6'>
+              <ul className='-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300'>
+                {navItems.map((item) => (
+                  <MobileNavItem key={item.name} href={item.href}>
+                    {item.name}
+                  </MobileNavItem>
+                ))}
+              </ul>
+            </nav>
+          </Popover.Panel>
+        </Transition.Child>
+      </Transition.Root>
+    </Popover>
+  )
+}
+
+function ModeToggle() {
+  function disableTransitionsTemporarily() {
+    document.documentElement.classList.add('[&_*]:!transition-none')
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('[&_*]:!transition-none')
+    }, 0)
+  }
+
+  function toggleMode() {
+    disableTransitionsTemporarily()
+
+    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    let isSystemDarkMode = darkModeMediaQuery.matches
+    let isDarkMode = document.documentElement.classList.toggle('dark')
+
+    if (isDarkMode === isSystemDarkMode) {
+      delete window.localStorage.isDarkMode
+    } else {
+      window.localStorage.isDarkMode = isDarkMode
+    }
+  }
+
+  return (
+    <button
+      type='button'
+      aria-label='Toggle dark mode'
+      className='group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20'
+      onClick={toggleMode}>
+      <SunIcon className='h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600' />
+      <MoonIcon className='hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500' />
+    </button>
+  )
+}
 
 export const Header = () => {
   const { asPath } = useRouter()
-  const [breadcrumbs, setBreadcrumbs] = useState<IBreadcrumb[]>([])
   return (
-    <nav className='relative flex items-center justify-between px-8 my-4'>
-      <ol aria-label='breadcrumb' className='flex space-x-2'>
-        <BreadcrumbItem href='/' isRoot>
-          ~
-        </BreadcrumbItem>
-        {breadcrumbs &&
-          breadcrumbs.map(({ href, label, isCurrent }) => (
-            <BreadcrumbItem href={href} isCurrent={isCurrent} key={href}>
-              {label}
-            </BreadcrumbItem>
+    <header>
+      <nav className='relative mb-10 flex items-center justify-end space-x-3 md:justify-between md:space-x-0'>
+        <MobileNavigation className='pointer-events-auto md:hidden' />
+        <ul className='hidden space-x-2 md:flex'>
+          {navItems.map((item, index) => (
+            <Link href={item.href} key={index}>
+              <a
+                className={cx(
+                  asPath === item.href
+                    ? 'font-semibold text-gray-800 dark:text-gray-200'
+                    : 'font-normal text-gray-600 dark:text-gray-400',
+                  'hidden rounded-lg p-1 transition-all hover:bg-gray-200 dark:hover:bg-gray-800 sm:px-3 sm:py-2 md:inline-block'
+                )}>
+                {item.name}
+              </a>
+            </Link>
           ))}
-      </ol>
-      <ul className='space-x-2 list-none hiden md:flex'>
-        {navItems.map((item, index) => (
-          <NavItem href={item.href} asPath={asPath} key={index}>
-            {item.name}
-          </NavItem>
-        ))}
-      </ul>
-    </nav>
+        </ul>
+        <div className='pointer-events-auto'>
+          <ModeToggle />
+        </div>
+      </nav>
+    </header>
   )
 }
