@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import { Tooltip } from '@nextui-org/react'
+import { Works } from '@components'
 
 const socials = [
   {
@@ -88,6 +89,7 @@ const Home: NextPage = () => {
             Featured Projects
           </h3>
         </div>
+        <Works />
       </div>
     </div>
   )
