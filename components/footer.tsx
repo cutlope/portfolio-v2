@@ -39,7 +39,7 @@ export const Footer = (): JSX.Element => {
             href='https://github.com/cutlope/portfolio-v2'
             target='_blank'
             rel='noreferrer'>
-            <a className='text-blue-400 hover:text-blue-300 transition duration-200'>
+            <a className='text-blue-400 transition duration-200 hover:text-blue-300 hover:decoration-blue-400 hover:underline'>
               here
             </a>
           </Link>

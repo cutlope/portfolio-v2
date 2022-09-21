@@ -37,7 +37,7 @@ export const Projects = ({ isWork, work }: IProjectProps): JSX.Element => {
                 <h3 className='pr-4'>{work.name}</h3>
                 {isWork ? (
                   <div>
-                    <span className='border-b text-sm dark:text-gray-200 sm:mr-7 md:mr-5 '>
+                    <span className='border-b text-sm dark:text-gray-200 sm:mr-7 md:mr-2 '>
                       {work.duration}
                     </span>
                   </div>

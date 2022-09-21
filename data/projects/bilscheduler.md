@@ -1,8 +1,9 @@
 ---
 name: The Bilkent Scheduler
 description: A web app that helps Bilkent University students create their schedules during course registration.
-websiteUrl: https://www.thebilkentscheduler.com/
+websiteUrl: thebilkentscheduler.com
 githubUrl: https://github.com/cutlope/bilkent-scheduler
+image: bilS.webp
 iconName: calendar.svg
 duration: 1 week
 techStack:

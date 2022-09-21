@@ -53,7 +53,6 @@ export const Tilde = (): JSX.Element => {
   useEffect(() => {
     const path = asPath.replace(/#.*/, '') //Remove trailing slash from path
     const pathWithoutQuery = path.split('?')[0] //Remove query params from path
-    console.log(path)
     let pathArray = pathWithoutQuery.split('/')
     pathArray.shift()
     pathArray = pathArray.filter((path) => path !== '')

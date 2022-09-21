@@ -1,9 +1,10 @@
 ---
 name: BlessHost
 description: 'BlessHost is a web hosting company that offers a variety of hosting services, including shared hosting, VPS hosting, and dedicated servers.'
-websiteUrl: https://www.blesshost.com/
+websiteUrl: blesshost.com
 githubUrl: https://github.com/thecrazybob/blesshost-next
 iconName: bh.svg
+image: blesshost.webp
 role: Intern Software Engineer
 duration: Jun 2022 - Sep 2022
 techStack:

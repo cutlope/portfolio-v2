@@ -4,6 +4,7 @@ description: 'A classified web app for Bilkent University. A single page React a
 websiteUrl: https://biltrader-next.vercel.app
 githubUrl: https://github.com/thecrazybob/biltrader-next
 iconName: bt.svg
+image: biltrader.webp
 duration: <1 month
 techStack:
   - title: React
