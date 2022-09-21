@@ -54,6 +54,10 @@ export const Project = defineDocumentType(() => ({
       of: Icon,
       required: true,
     },
+    duration: {
+      type: 'string',
+      required: true,
+    },
   },
   computedFields: {
     slug: {

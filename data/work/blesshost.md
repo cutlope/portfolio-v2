@@ -7,6 +7,8 @@ iconName: bh.svg
 role: Intern Software Engineer
 duration: Jun 2022 - Sep 2022
 techStack:
+  - title: React
+    iconName: react.svg
   - title: Next.js
     iconName: nextjs.svg
   - title: WHMCS
