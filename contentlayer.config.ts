@@ -13,6 +13,10 @@ const Icon = defineNestedType(() => ({
     iconName: {
       type: 'string',
     },
+    description: {
+      type: 'string',
+      required: false,
+    },
   },
 }))
 
@@ -45,7 +49,7 @@ export const Project = defineDocumentType(() => ({
       description: 'The name of the icon to use for the project',
       required: false,
     },
-    Image: {
+    image: {
       type: 'string',
       required: false,
     },
@@ -122,7 +126,19 @@ export const Work = defineDocumentType(() => ({
   },
 }))
 
+export const Skills = defineDocumentType(() => ({
+  name: 'Skills',
+  filePathPattern: 'skills.md',
+  fields: {
+    techStack: {
+      type: 'list',
+      of: Icon,
+      required: true,
+    },
+  },
+}))
+
 export default makeSource({
   contentDirPath: './data',
-  documentTypes: [Project, Work],
+  documentTypes: [Project, Work, Skills],
 })
