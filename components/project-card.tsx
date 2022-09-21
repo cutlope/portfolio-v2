@@ -90,7 +90,7 @@ export const Projects = ({ isWork, work }: IProjectProps): JSX.Element => {
         {(work.websiteUrl || work.githubUrl) && (
           <a
             className='border-accent bg-accent text-tertiary hover:bg-secondary hover:text-accent absolute -top-2 -right-2 hidden rounded-full border-[1px] p-1.5 opacity-0 transition group-hover:block group-hover:opacity-100'
-            href={work.websiteUrl || work.githubUrl}
+            href={`https://${work.websiteUrl || work.githubUrl}`}
             target='_blank'
             rel='noopener noreferrer'>
             <ArrowTopRightOnSquareIcon className='h-4 w-4 dark:invert' />
