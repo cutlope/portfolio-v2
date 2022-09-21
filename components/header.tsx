@@ -24,14 +24,6 @@ let navItems: Array<{ name: string; href: string }> = [
     href: '/projects',
   },
   {
-    name: 'Uses',
-    href: '/uses',
-  },
-  {
-    name: 'Contact',
-    href: '/contact',
-  },
-  {
     name: 'Resume',
     href: '/resume.pdf',
   },
@@ -157,7 +149,7 @@ function ModeToggle() {
   )
 }
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   const { asPath } = useRouter()
   return (
     <header>
