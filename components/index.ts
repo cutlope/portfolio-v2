@@ -1,3 +1,5 @@
 export * from './header'
+export * from './footer'
 export * from './tilde'
-export * from './workcard'
+export * from './project-card'
+export * from './socials'
