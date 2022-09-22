@@ -8,7 +8,7 @@ interface ISkillBoxProps {
 
 export function SkillBox({ title, description, logo }: ISkillBoxProps) {
   return (
-    <div className='flex transform items-center divide-x-2 divide-black rounded-xl bg-white p-4 shadow-md filter transition-all hover:scale-[1.01] dark:divide-white dark:bg-[#171E28]'>
+    <div className='flex transform items-center divide-x-2 divide-black rounded-xl bg-white p-4 shadow-md filter transition-all hover:scale-[1.06] dark:divide-white dark:bg-[#171E28]'>
       <div className='mx-4 flex items-center justify-center dark:invert'>
         <Image
           width={48}

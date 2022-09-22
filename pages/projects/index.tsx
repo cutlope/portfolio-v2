@@ -25,22 +25,17 @@ export default function Projects() {
       </div>
       <h1 className='mb-8 text-2xl font-bold dark:text-white'>Projects</h1>
       <div className='flex-col space-y-8'>
-        {allProjects.map(
-          (project) => (
-            console.log(project),
-            (
-              <BigProjectCard
-                key={project._id}
-                slug={project.slug}
-                name={project.name}
-                description={project.description}
-                image={project.image as string}
-                link={project.websiteUrl as string}
-                githubLink={project.githubUrl as string}
-              />
-            )
-          )
-        )}
+        {allProjects.map((project) => (
+          <BigProjectCard
+            key={project._id}
+            slug={project.slug}
+            name={project.name}
+            description={project.description}
+            image={project.image as string}
+            link={project.websiteUrl as string}
+            githubLink={project.githubUrl as string}
+          />
+        ))}
       </div>
     </>
   )

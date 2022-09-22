@@ -29,6 +29,7 @@ export const Project = defineDocumentType(() => ({
       description: 'The name of the project',
       required: true,
     },
+    date: { type: 'date', required: true },
     description: {
       type: 'string',
       description: 'A description of the project',
@@ -80,6 +81,7 @@ export const Work = defineDocumentType(() => ({
       description: 'The name of the company',
       required: true,
     },
+    date: { type: 'date', required: true },
     description: {
       type: 'string',
       description: 'A description of the company',

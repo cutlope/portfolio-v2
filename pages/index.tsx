@@ -6,6 +6,9 @@ import { ArrowSmallRightIcon } from '@heroicons/react/24/outline'
 import { NextSeo } from 'next-seo'
 
 const Home: NextPage = () => {
+  const sortedProjects = allProjects.sort(
+    (a, b) => Date.parse(b.date) - Date.parse(a.date)
+  )
   return (
     <>
       <NextSeo
@@ -63,7 +66,7 @@ const Home: NextPage = () => {
             <h2 className='mb-1 text-2xl font-semibold  tracking-tight text-black dark:text-white md:text-4xl '>
               Projects
             </h2>
-            {allProjects.slice(0, 3).map((project, index) => (
+            {sortedProjects.slice(0, 3).map((project, index) => (
               <Projects key={index} isWork={false} work={project} />
             ))}
             <Link href='/projects'>

@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@components": ["components/index.ts"],
+      "@utils": ["utils/functions.ts"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "target": "es5",

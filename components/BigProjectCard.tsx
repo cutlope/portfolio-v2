@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import github from 'public/icons/github.svg'
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline'
+import { getGitDetails, cleanLink, basePathProject } from '@utils'
 
 interface ProjectProps {
   slug: string
@@ -10,18 +11,6 @@ interface ProjectProps {
   link: string
   githubLink: string
   image: string
-}
-
-function basePath(url: string) {
-  return '/showcase/' + url
-}
-function cleanLink(link: string): string {
-  return link.replace(/^https?:\/\//, '')
-}
-
-function getGitDetails(link: string): string {
-  const [, owner, repo] = link.match(/github.com\/([^/]+)\/([^/]+)/) || []
-  return `${owner}/${repo}`
 }
 
 export const BigProjectCard = ({
@@ -38,7 +27,7 @@ export const BigProjectCard = ({
         <Link href={`/projects/${slug}`}>
           <div className='relative mx-auto h-36 max-w-[300px] transition duration-200 hover:opacity-60 md:h-full '>
             <Image
-              src={basePath(image)}
+              src={basePathProject(image)}
               alt={name}
               className='rounded-lg'
               layout='fill'
@@ -81,11 +70,24 @@ export const BigProjectCard = ({
             )}
           </div>
         </div>
-        {/* <Link href={`/projects/${slug}`}>
-          <a className='pt-4 dark:text-white'>
+        <Link href={`/projects/${slug}`}>
+          <a className='flex items-center pt-4 hover:underline hover:decoration-blue-600 dark:text-white'>
             Learn More
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              className='ml-1 h-6 w-6 pt-1'>
+              <path
+                stroke='currentColor'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z'
+              />
+            </svg>
           </a>
-        </Link> */}
+        </Link>
       </div>
     </div>
   )

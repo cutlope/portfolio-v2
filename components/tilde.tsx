@@ -26,7 +26,7 @@ const BreadcrumbItem = ({
     {!isRoot && (
       <span
         aria-hidden='true'
-        className='text-gray-700 opacity-50 dark:text-gray-100'>
+        className='text-gray-700 opacity-50 dark:text-gray-100 '>
         /
       </span>
     )}
@@ -35,9 +35,9 @@ const BreadcrumbItem = ({
         <a
           className={cx(
             isCurrent
-              ? 'bg-gradient-to-br from-[#9ebd13] to-[#008552] bg-clip-text font-bold text-transparent'
-              : 'text-gray-300',
-            'text-black transition duration-200 hover:opacity-80 dark:text-white'
+              ? 'bg-gradient-to-l from-cyan-300 to-cyan-400 bg-clip-text font-bold  text-transparent'
+              : 'text-black/50 dark:text-white',
+            'font-mono text-black transition duration-200  hover:opacity-80'
           )}>
           {children}
         </a>
@@ -70,9 +70,16 @@ export const Tilde = (): JSX.Element => {
   }, [asPath])
 
   return (
-    <ol aria-label='breadcrumb' className='flex space-x-2 capitalize'>
+    <ol aria-label='breadcrumb' className='flex space-x-2 capitalize '>
       <BreadcrumbItem href='/' isRoot>
-        ~
+        <span
+          className={cx(
+            asPath === '/'
+              ? 'bg-gradient-to-l from-cyan-200 to-cyan-400 bg-clip-text font-bold text-transparent'
+              : null
+          )}>
+          ~
+        </span>
       </BreadcrumbItem>
       {breadcrumbs &&
         breadcrumbs.map(({ href, label, isCurrent }) => (
