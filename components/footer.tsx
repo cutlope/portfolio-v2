@@ -1,5 +1,6 @@
 import { Socials } from './socials'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const Footer = (): JSX.Element => {
   let year = new Date().getFullYear()
@@ -12,12 +13,13 @@ export const Footer = (): JSX.Element => {
               Currently listening to
             </div>
             <div className='flex items-center space-x-2 text-xl font-medium dark:text-white'>
-              <img
+              <Image
                 width='130'
-                height='130'
+                height='41'
+                layout='intrinsic'
                 src='/icons/spotify.svg'
                 className='dark:invert'
-                alt='Spotify Logo'></img>
+                alt='Spotify Logo'></Image>
               <div>Not Playing</div>
             </div>
           </div>

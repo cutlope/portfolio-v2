@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { allProjects, Project, allWorks, Work } from 'contentlayer/generated'
-import { useMDXComponent } from 'next-contentlayer/hooks'
+// import { useMDXComponent } from 'next-contentlayer/hooks'
 import { getGitDetails, cleanLink, basePathProject, basePath } from '@utils'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
@@ -22,7 +22,8 @@ export default function ProjectPage({ project }: { project: Project | Work }) {
       />
       <div className='mt-8 flex items-center space-x-8'>
         <img
-          src={basePath(project.iconName)}
+          src={basePath(project.iconName as string)}
+          alt={project.name}
           className='bg-tertiary h-16 w-16 rounded-xl bg-white/95  p-2 shadow-md dark:shadow-white/50'
         />
         <div className='flex flex-col space-y-2'>
@@ -61,7 +62,7 @@ export default function ProjectPage({ project }: { project: Project | Work }) {
         <Image
           width='1200'
           height='632'
-          src={basePathProject(project.image)}
+          src={basePathProject(project.image as string)}
           className='rounded-xl'
           alt={project.name}
         />

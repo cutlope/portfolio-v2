@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <>
       <NextSeo
         title='Abdullah Riaz - Full Stack Developer'
-        description="I'm Abdullah Riaz, a full stack web developer. Designing and developing meaningful, results-driven websites and
+        description="I'm Abdullah Riaz, a full stack web developer. I Design and develop meaningful, results-driven websites and
         applications that are fast and built to last."
       />
       <div className='pl-3'>

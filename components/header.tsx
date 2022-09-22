@@ -153,7 +153,7 @@ export const Header = (): JSX.Element => {
   const { asPath } = useRouter()
   return (
     <header>
-      <nav className='relative mb-6 flex items-center justify-end space-x-3 md:mb-16 md:justify-between md:space-x-0'>
+      <nav className='relative mb-6 mt-1 flex items-center justify-end space-x-3 md:mb-16 md:justify-between md:space-x-0'>
         <MobileNavigation className='pointer-events-auto md:hidden' />
         <ul className='hidden space-x-2 md:flex'>
           {navItems.map((item, index) => (

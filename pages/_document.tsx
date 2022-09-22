@@ -39,6 +39,8 @@ export default function Document() {
   return (
     <Html className='h-full antialiased' lang='en'>
       <Head>
+        <link rel='icon' type='image/svg+xml' href='favicon.svg' />
+        <link rel='icon' type='image/png' href='favicon.png' />
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
       </Head>
       <body className='bg-zinc-50 selection:bg-purple-500/90 selection:text-white dark:bg-gray-900'>
