@@ -1,5 +1,6 @@
 ---
 name: Bilheal
+date: 2022-05-01
 description: A proposed web app for Bilkent University's Health Center that aims to ease the interaction between patients and the health center's staff. Created as part of a group project for a course.
 websiteUrl: bilheal.com
 githubUrl: https://github.com/cutlope/cs319-project
