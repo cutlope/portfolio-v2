@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         description="I'm Abdullah Riaz, a full stack web developer. I Design and develop meaningful, results-driven websites and
         applications that are fast and built to last."
       />
-      <div className='pl-3'>
+      <div className='md:pl-3'>
         <div className='flex flex-col-reverse items-start sm:flex-row'>
           <div className='flex flex-col md:pr-8'>
             <h1 className='mb-2 overflow-hidden font-mono text-4xl font-semibold dark:text-gray-100 sm:text-6xl'>
