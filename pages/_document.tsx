@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -47,6 +48,13 @@ export default function Document() {
       <body className='bg-zinc-50 selection:bg-purple-500/90 selection:text-white dark:bg-gray-900'>
         <Main />
         <NextScript />
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            data-website-id='a4140853-6912-4d22-bd8d-db31185f494d'
+            src='https://umami-analytics-sand.vercel.app/cutlope.js'
+            strategy='worker'
+          />
+        )}
       </body>
     </Html>
   )
