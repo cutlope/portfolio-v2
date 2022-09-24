@@ -51,7 +51,7 @@ export default function Document() {
         {process.env.NODE_ENV === 'production' && (
           <Script
             data-website-id='a4140853-6912-4d22-bd8d-db31185f494d'
-            src='https://umami-analytics-sand.vercel.app/cutlope.js'
+            src='https://analytics.cutlope.dev/cutlope.js'
             strategy='worker'
           />
         )}
