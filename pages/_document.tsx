@@ -3,6 +3,7 @@ import { Head, Html, Main, NextScript } from 'next/document'
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
+  window.localStorage.isDarkMode = 'true'
   updateMode()
   darkModeMediaQuery.addEventListener('change', updateModeWithoutTransitions)
   window.addEventListener('storage', updateModeWithoutTransitions)
