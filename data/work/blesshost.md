@@ -6,8 +6,8 @@ websiteUrl: blesshost.com
 githubUrl: https://github.com/thecrazybob/blesshost-next
 iconName: bh.svg
 image: blesshost.webp
-role: Intern Software Engineer
-duration: Jun 2022 - Sep 2022
+role: Software Engineer
+duration: July 2021 - Sep 2022
 techStack:
   - title: React
     iconName: react.svg
@@ -15,7 +15,7 @@ techStack:
     iconName: nextjs.svg
   - title: WHMCS
     iconName: whmcs.svg
-  - title: Tailwind
+  - title: TailwindCSS
     iconName: tailwind.svg
   - title: Cloudflare
     iconName: cloudflare.svg
