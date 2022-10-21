@@ -36,7 +36,7 @@ const Home: NextPage = () => {
               </span>
             </h1>
             <h2 className='mb-4 text-gray-700 dark:text-gray-200'>
-              Full-Stack Developer ~ Tech Enthusiast
+              Software Engineer ~ Tech Enthusiast
             </h2>
             <p className='mb-4 text-gray-600 dark:text-gray-400 '>
               Designing and developing meaningful, results-driven websites and
