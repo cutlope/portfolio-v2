@@ -21,12 +21,12 @@ export default function About() {
       </section>
       <div className='font-body space-y-5 text-lg text-zinc-600 dark:text-zinc-400'>
         <p>
-          Personally, I love to code because I enjoy the challenge of solving
-          problems, no matter how big or minor they are. I simply love the
-          feeling of accomplishment that follows when i get something to work
-          the way I want it to. I also love to learn new things and try to
-          implement them in my projects. I have been coding for about 3 years
-          and I have worked on a variety of projects .
+          I love to code because I enjoy the challenge of solving problems, no
+          matter how big or minor they are. I simply love the feeling of
+          accomplishment that follows when I get something to work how I want it
+          to. I also love to learn new things and try to implement them in my
+          projects. I have been coding for about 3 years and have worked on a
+          variety of projects.
         </p>
       </div>
 
