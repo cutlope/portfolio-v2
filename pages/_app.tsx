@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Header, Footer, Tilde } from '@components'
 import NextNProgress from 'nextjs-progressbar'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -31,6 +32,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Header />
         <NextNProgress color='#A0A0A0' options={{ showSpinner: false }} />
         <Component {...pageProps} />
+        <Analytics />
         <Footer />
       </div>
     </main>
