@@ -30,17 +30,18 @@ export const BigProjectCard = ({
               src={basePathProject(image)}
               alt={name}
               className='rounded-lg'
-              layout='fill'
+              sizes='100vw'
+              fill
             />
           </div>
         </Link>
       </div>
       <div className='flex flex-1 flex-col justify-between'>
         <div className='flex flex-col space-y-2'>
-          <Link href={`/projects/${slug}`}>
-            <a className='transition duration-200 hover:opacity-60 dark:text-white'>
-              <h2 className='text-2xl font-bold'>{name}</h2>
-            </a>
+          <Link
+            className='transition duration-200 hover:opacity-60 dark:text-white'
+            href={`/projects/${slug}`}>
+            <h2 className='text-2xl font-bold'>{name}</h2>
           </Link>
           <p className='text-md text-gray-600 dark:text-gray-400'>
             {description}
@@ -55,38 +56,37 @@ export const BigProjectCard = ({
               </a>
             )}
             {githubLink && (
-              <Link href={githubLink}>
-                <a className='flex transform items-center gap-x-2 transition-all hover:scale-[1.01] '>
-                  <Image
-                    className='dark:invert '
-                    width={20}
-                    height={20}
-                    layout='fixed'
-                    src={github}
-                    alt='logo'></Image>
-                  {getGitDetails(githubLink)}{' '}
-                </a>
+              <Link
+                className='flex transform items-center gap-x-2 transition-all hover:scale-[1.01]'
+                href={githubLink}>
+                <Image
+                  className='dark:invert '
+                  width={20}
+                  height={20}
+                  src={github}
+                  alt='logo'></Image>
+                {getGitDetails(githubLink)}{' '}
               </Link>
             )}
           </div>
         </div>
-        <Link href={`/projects/${slug}`}>
-          <a className='flex items-center pt-4 hover:underline hover:decoration-blue-600 dark:text-white'>
-            Learn More
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
-              className='ml-1 h-6 w-6 pt-1'>
-              <path
-                stroke='currentColor'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth={2}
-                d='M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z'
-              />
-            </svg>
-          </a>
+        <Link
+          className='flex items-center pt-4 hover:underline hover:decoration-blue-600 dark:text-white'
+          href={`/projects/${slug}`}>
+          Learn More
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            className='ml-1 h-6 w-6 pt-1'>
+            <path
+              stroke='currentColor'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z'
+            />
+          </svg>
         </Link>
       </div>
     </div>

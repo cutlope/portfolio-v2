@@ -50,7 +50,6 @@ export default function ProjectPage({ project }: { project: Project | Work }) {
               className='dark:invert '
               width={20}
               height={20}
-              layout='fixed'
               src={github}
               alt='logo'></Image>
             {getGitDetails(project.githubUrl)}
