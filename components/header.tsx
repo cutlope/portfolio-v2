@@ -37,8 +37,8 @@ interface MyLinkProps {
 
 function MyLink({ href, children, ...rest }: MyLinkProps) {
   return (
-    <Link href={href}>
-      <a {...rest}>{children}</a>
+    <Link {...rest} href={href}>
+      {children}
     </Link>
   )
 }
@@ -157,16 +157,16 @@ export const Header = (): JSX.Element => {
         <MobileNavigation className='pointer-events-auto md:hidden' />
         <ul className='hidden space-x-2 md:flex'>
           {navItems.map((item, index) => (
-            <Link href={item.href} key={index}>
-              <a
-                className={cx(
-                  asPath === item.href
-                    ? 'font-semibold text-gray-800 dark:text-gray-200'
-                    : 'font-normal text-gray-600 dark:text-gray-400',
-                  'hidden rounded-lg p-1 transition-all hover:bg-gray-200 dark:hover:bg-gray-800 sm:px-3 sm:py-2 md:inline-block'
-                )}>
-                {item.name}
-              </a>
+            <Link
+              className={cx(
+                asPath === item.href
+                  ? 'font-semibold text-gray-800 dark:text-gray-200'
+                  : 'font-normal text-gray-600 dark:text-gray-400',
+                'hidden rounded-lg p-1 transition-all hover:bg-gray-200 dark:hover:bg-gray-800 sm:px-3 sm:py-2 md:inline-block'
+              )}
+              href={item.href}
+              key={index}>
+              {item.name}
             </Link>
           ))}
         </ul>

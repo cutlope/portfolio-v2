@@ -43,17 +43,17 @@ export default function ProjectPage({ project }: { project: Project | Work }) {
         )}
 
         {project.githubUrl && (
-          <Link href={project.githubUrl}>
-            <a className='flex transform items-center gap-x-2 transition-all hover:scale-[1.01]  hover:underline hover:decoration-blue-600 '>
-              <Image
-                className='dark:invert '
-                width={20}
-                height={20}
-                layout='fixed'
-                src={github}
-                alt='logo'></Image>
-              {getGitDetails(project.githubUrl)}{' '}
-            </a>
+          <Link
+            className='flex transform items-center gap-x-2 transition-all hover:scale-[1.01]  hover:underline hover:decoration-blue-600 '
+            href={project.githubUrl}>
+            <Image
+              className='dark:invert '
+              width={20}
+              height={20}
+              layout='fixed'
+              src={github}
+              alt='logo'></Image>
+            {getGitDetails(project.githubUrl)}
           </Link>
         )}
       </div>

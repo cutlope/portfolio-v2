@@ -25,66 +25,66 @@ export const Projects = ({ isWork, work }: IProjectProps): JSX.Element => {
       <div
         key={work._id}
         className='border-tertiary bg-secondary hover:border-accent group relative rounded-2xl border-[1px] p-4 transition duration-200 md:hover:scale-[1.02] '>
-        <Link href={`/projects/${work.slug}`}>
-          <a className='flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4 '>
-            <img
-              src={basePath(work.iconName!)}
-              alt={work.name}
-              className='sm:mt- h-12 w-12 rounded-xl bg-white/95 p-1 shadow-md dark:shadow-white/50 '
-            />
-            <div className='flex-col space-y-2'>
-              <div className='flex flex-row flex-wrap items-center justify-between gap-y-1.5 gap-x-7 text-lg font-semibold dark:text-white '>
-                <h3 className='pr-4'>{work.name}</h3>
-                {isWork ? (
-                  <div>
-                    <span className='border-b text-sm dark:text-gray-200 sm:mr-7 md:mr-2 '>
-                      {work.duration}
-                    </span>
-                  </div>
-                ) : null}
-              </div>
-              <p className='text-md text-gray-600 dark:text-gray-400'>
-                {work.description}
-              </p>
-
-              <div className='flex flex-row flex-wrap items-center gap-x-10 gap-y-1.5 '>
-                {isWork ? (
-                  <div>
-                    <span className='max-w-max  border-gray-400 text-gray-800 dark:text-gray-300'>
-                      Role:{' '}
-                    </span>
-                    <span className='border-b dark:text-gray-200'>
-                      {work.role}
-                    </span>
-                  </div>
-                ) : (
-                  <div>
-                    <span className='max-w-max  border-gray-400 text-gray-800 dark:text-gray-300'>
-                      Timeframe:{' '}
-                    </span>
-                    <span className='border-b dark:text-gray-200'>
-                      {work.duration}
-                    </span>
-                  </div>
-                )}
-
-                <div className='flex flex-wrap items-center gap-3 dark:invert  '>
-                  <span className='max-w-max  border-gray-400 text-gray-800 dark:text-gray-300 dark:!invert'>
-                    Tech Stack:{' '}
+        <Link
+          className='flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4 '
+          href={`/projects/${work.slug}`}>
+          <img
+            src={basePath(work.iconName!)}
+            alt={work.name}
+            className='sm:mt- h-12 w-12 rounded-xl bg-white/95 p-1 shadow-md dark:shadow-white/50 '
+          />
+          <div className='flex-col space-y-2'>
+            <div className='flex flex-row flex-wrap items-center justify-between gap-y-1.5 gap-x-7 text-lg font-semibold dark:text-white '>
+              <h3 className='pr-4'>{work.name}</h3>
+              {isWork ? (
+                <div>
+                  <span className='border-b text-sm dark:text-gray-200 sm:mr-7 md:mr-2 '>
+                    {work.duration}
                   </span>
-                  {work.techStack?.map((tech) => (
-                    <Tooltip content={tech.title} key={tech.title}>
-                      <Image
-                        alt={tech.title}
-                        src={basePath(tech.iconName!)}
-                        width='30'
-                        height='30'></Image>
-                    </Tooltip>
-                  ))}
                 </div>
+              ) : null}
+            </div>
+            <p className='text-md text-gray-600 dark:text-gray-400'>
+              {work.description}
+            </p>
+
+            <div className='flex flex-row flex-wrap items-center gap-x-10 gap-y-1.5 '>
+              {isWork ? (
+                <div>
+                  <span className='max-w-max  border-gray-400 text-gray-800 dark:text-gray-300'>
+                    Role:{' '}
+                  </span>
+                  <span className='border-b dark:text-gray-200'>
+                    {work.role}
+                  </span>
+                </div>
+              ) : (
+                <div>
+                  <span className='max-w-max  border-gray-400 text-gray-800 dark:text-gray-300'>
+                    Timeframe:{' '}
+                  </span>
+                  <span className='border-b dark:text-gray-200'>
+                    {work.duration}
+                  </span>
+                </div>
+              )}
+
+              <div className='flex flex-wrap items-center gap-3 dark:invert  '>
+                <span className='max-w-max  border-gray-400 text-gray-800 dark:text-gray-300 dark:!invert'>
+                  Tech Stack:{' '}
+                </span>
+                {work.techStack?.map((tech) => (
+                  <Tooltip content={tech.title} key={tech.title}>
+                    <Image
+                      alt={tech.title}
+                      src={basePath(tech.iconName!)}
+                      width='30'
+                      height='30'></Image>
+                  </Tooltip>
+                ))}
               </div>
             </div>
-          </a>
+          </div>
         </Link>
 
         {(work.websiteUrl || work.githubUrl) && (

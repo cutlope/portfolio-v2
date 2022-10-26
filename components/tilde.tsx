@@ -31,16 +31,16 @@ const BreadcrumbItem = ({
       </span>
     )}
     <li>
-      <Link href={href} aria-current={isCurrent ? 'page' : 'false'}>
-        <a
-          className={cx(
-            isCurrent
-              ? 'bg-gradient-to-l from-cyan-300 to-cyan-400 bg-clip-text font-bold  text-transparent'
-              : 'text-black/50 dark:text-white',
-            'font-mono text-black transition duration-200  hover:opacity-80'
-          )}>
-          {children}
-        </a>
+      <Link
+        className={cx(
+          isCurrent
+            ? 'bg-gradient-to-l from-cyan-300 to-cyan-400 bg-clip-text font-bold  text-transparent'
+            : 'text-black/50 dark:text-white',
+          'font-mono text-black transition duration-200  hover:opacity-80'
+        )}
+        href={href}
+        aria-current={isCurrent ? 'page' : 'false'}>
+        {children}
       </Link>
     </li>
   </Fragment>

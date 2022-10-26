@@ -38,12 +38,11 @@ export const Footer = (): JSX.Element => {
         <div className='dark:text-gray-400 '>
           The source code for this portfolio can be found{' '}
           <Link
+            className='text-blue-400 transition duration-200 hover:text-blue-300 hover:underline hover:decoration-blue-400'
             href='https://github.com/cutlope/portfolio-v2'
             target='_blank'
             rel='noreferrer'>
-            <a className='text-blue-400 transition duration-200 hover:text-blue-300 hover:underline hover:decoration-blue-400'>
-              here
-            </a>
+            here
           </Link>
         </div>
         <div className='dark:text-white/80 '>© {year} Abdullah Riaz</div>

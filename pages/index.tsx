@@ -54,11 +54,11 @@ const Home: NextPage = () => {
             {allWorks.slice(0, 3).map((work, index) => (
               <Projects key={index} isWork={true} work={work} />
             ))}
-            <Link href='/projects'>
-              <a className='group mt-2 flex items-center justify-start space-x-2 text-xl font-medium hover:underline hover:decoration-emerald-400 dark:text-white'>
-                <span>View All Work History</span>
-                <ArrowSmallRightIcon className='h-4 w-4 transition duration-200 group-hover:translate-x-1' />
-              </a>
+            <Link
+              className='group mt-2 flex items-center justify-start space-x-2 text-xl font-medium hover:underline hover:decoration-emerald-400 dark:text-white'
+              href='/projects'>
+              <span>View All Work History</span>
+              <ArrowSmallRightIcon className='h-4 w-4 transition duration-200 group-hover:translate-x-1' />
             </Link>
           </div>
 
@@ -69,11 +69,11 @@ const Home: NextPage = () => {
             {sortedProjects.slice(0, 3).map((project, index) => (
               <Projects key={index} isWork={false} work={project} />
             ))}
-            <Link href='/projects'>
-              <a className='group flex items-center justify-start space-x-2 text-xl font-medium hover:underline hover:decoration-blue-400 dark:text-white '>
-                <span>View All Projects</span>
-                <ArrowSmallRightIcon className='h-4 w-4 transition duration-200 group-hover:translate-x-1' />
-              </a>
+            <Link
+              className='group flex items-center justify-start space-x-2 text-xl font-medium hover:underline hover:decoration-blue-400 dark:text-white '
+              href='/projects'>
+              <span>View All Projects</span>
+              <ArrowSmallRightIcon className='h-4 w-4 transition duration-200 group-hover:translate-x-1' />
             </Link>
           </div>
         </div>
