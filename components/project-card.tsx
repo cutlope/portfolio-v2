@@ -76,7 +76,7 @@ export const Projects = ({ isWork, work }: IProjectProps): JSX.Element => {
                 {work.techStack?.map((tech) => (
                   <Tooltip content={tech.title} key={tech.title}>
                     <Image
-                      alt={tech.title}
+                      alt={tech.title!}
                       src={basePath(tech.iconName!)}
                       width='30'
                       height='30'></Image>

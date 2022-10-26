@@ -16,7 +16,7 @@ export const Footer = (): JSX.Element => {
               <Image
                 width='130'
                 height='41'
-                layout='intrinsic'
+                style={{ maxWidth: '100%', height: 'auto' }}
                 src='/icons/spotify.svg'
                 className='dark:invert'
                 alt='Spotify Logo'></Image>
