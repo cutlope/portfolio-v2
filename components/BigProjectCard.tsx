@@ -25,7 +25,7 @@ export const BigProjectCard = ({
     <div className=' flex min-h-[220px] transform flex-col space-y-8 rounded-lg border-[1px] p-5 transition-all hover:scale-[1.01] dark:bg-[#141c29] md:flex-row md:space-y-0 md:space-x-4'>
       <div className='overflow-hidden rounded-lg md:w-72'>
         <Link href={`/projects/${slug}`}>
-          <div className='relative mx-auto h-36 max-w-[300px] transition duration-200 hover:opacity-60 md:h-full '>
+          <div className='relative mx-auto h-52 max-w-[300px] transition duration-200 hover:opacity-60 md:h-full '>
             <Image
               src={basePathProject(image)}
               alt={name}

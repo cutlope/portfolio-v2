@@ -8,7 +8,7 @@ techStack:
     description: JavaScript Framework of choice
   - title: TypeScript
     iconName: typescript.svg
-    description: Recently started using it. Pretty nifty tool
+    description: Why not?
   - title: Tailwind
     iconName: tailwind.svg
     description: Favorite CSS framework
