@@ -6,15 +6,6 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://cutlope.dev)
 
-## Description
-
-The Bilkent Scheduler is a web application that allows students to create their own schedules for the upcoming semester.
-
-The application is built using Next.js and uses a combination of Python BeautifulSoup and Github Actions([git-scraping](https://simonwillison.net/2020/Oct/9/git-scraping/)) to scrape the Bilkent University course catalog and create a JSON file that is used to populate the website. The application is hosted on Vercel.
-
-The Bilkent Scheduler was created because, at the time of its creation, the other available schedulers were not up to date with the current Bilkent University course offerings. The Bilkent Scheduler is updated every semester with the latest course offerings by itself.
-This project was my attempt at creating a more modern-looking and up-to-date scheduler that would be easier to use and self-updating. It was also an experiment to see how much I could learn and create in a span of 2 weeks.
-
 ## Table of Contents
 
 - [Installation](#installation)
