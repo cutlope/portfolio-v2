@@ -1,4 +1,5 @@
 import { Tooltip } from '@nextui-org/react'
+import Image from 'next/image'
 
 const socials = [
   {
@@ -27,7 +28,7 @@ export const Socials = ({ isFooter }: ISocialsProps): JSX.Element => {
             target='_blank'
             rel='noreferrer'
             aria-label={social.name}>
-            <img src={social.icon} alt={social.name} />
+            <Image src={social.icon} alt={social.name} width={40} height={40} />
           </a>
         </Tooltip>
       ))}

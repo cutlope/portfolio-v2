@@ -78,8 +78,8 @@ export const Projects = ({ isWork, work }: IProjectProps): JSX.Element => {
                     <Image
                       alt={tech.title!}
                       src={basePath(tech.iconName!)}
-                      width='30'
-                      height='30'></Image>
+                      width={30}
+                      height={30}></Image>
                   </Tooltip>
                 ))}
               </div>

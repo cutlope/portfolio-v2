@@ -43,7 +43,7 @@ export default function ProjectPage({ project }: { project: Project | Work }) {
         )}
 
         {project.githubUrl && (
-          <Link
+          <a
             className='flex transform items-center gap-x-2 transition-all hover:scale-[1.01]  hover:underline hover:decoration-blue-600 '
             href={project.githubUrl}>
             <Image
@@ -53,7 +53,7 @@ export default function ProjectPage({ project }: { project: Project | Work }) {
               src={github}
               alt='logo'></Image>
             {getGitDetails(project.githubUrl)}
-          </Link>
+          </a>
         )}
       </div>
 
