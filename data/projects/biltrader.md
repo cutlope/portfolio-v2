@@ -2,7 +2,7 @@
 name: Biltrader
 date: 2021-05-01
 description: 'A classified web app for Bilkent University. A single page React application connected to Spring Boot via APIs. Created as part of a group project for a course.'
-websiteUrl: https://biltrader-next.vercel.app
+websiteUrl: biltrader-next.vercel.app
 githubUrl: https://github.com/cutlope/biltrader-next
 iconName: bt.svg
 image: biltrader.webp
