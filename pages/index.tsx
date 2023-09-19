@@ -31,7 +31,7 @@ const Home: NextPage = () => {
                   Abdullah
                 </span>
                 <span
-                  className="absolute left-0 -bottom-0 -top-1 inline-block w-full animate-type bg-zinc-50 will-change-transform [font-family:monospace] after:absolute after:block after:h-full after:w-2
+                  className="absolute -bottom-0 -top-1 left-0 inline-block w-full animate-type bg-zinc-50 will-change-transform [font-family:monospace] after:absolute after:block after:h-full after:w-2
               after:animate-cursor after:bg-gray-900 after:content-[''] dark:bg-gray-900 after:dark:bg-gray-100"></span>
               </span>
             </h1>

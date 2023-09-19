@@ -22,7 +22,7 @@ export const BigProjectCard = ({
   githubLink,
 }: ProjectProps) => {
   return (
-    <div className=' flex min-h-[220px] transform flex-col space-y-8 rounded-lg border-[1px] p-5 transition-all hover:scale-[1.01] dark:bg-[#141c29] md:flex-row md:space-y-0 md:space-x-4'>
+    <div className='flex min-h-[220px] transform flex-col space-y-8 rounded-lg border-[1px] p-5 transition-all hover:scale-[1.01] dark:bg-[#141c29] md:flex-row md:space-x-4 md:space-y-0'>
       <div className='overflow-hidden rounded-lg md:w-72'>
         <Link href={`/projects/${slug}`}>
           <div className='relative mx-auto h-52 max-w-[300px] transition duration-200 hover:opacity-60 md:h-full '>
@@ -49,7 +49,7 @@ export const BigProjectCard = ({
           <div className='flex flex-col space-y-2 dark:text-white md:flex-row md:items-center md:space-x-5 md:space-y-0'>
             {link && (
               <a
-                href={`https://${link}`}
+                href={link}
                 className='flex transform items-center gap-x-1 transition-all hover:scale-[1.01]'>
                 {cleanLink(link)}
                 <ArrowUpRightIcon className='h-4 w-4' />

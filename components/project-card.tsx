@@ -26,7 +26,7 @@ export const Projects = ({ isWork, work }: IProjectProps): JSX.Element => {
         key={work._id}
         className='border-tertiary bg-secondary hover:border-accent group relative rounded-2xl border-[1px] p-4 transition duration-200 md:hover:scale-[1.02] '>
         <Link
-          className='flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4 '
+          className='flex flex-col space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0 '
           href={`/projects/${work.slug}`}>
           <img
             src={basePath(work.iconName!)}
@@ -34,7 +34,7 @@ export const Projects = ({ isWork, work }: IProjectProps): JSX.Element => {
             className='sm:mt- h-12 w-12 rounded-xl bg-white/95 p-1 shadow-md dark:shadow-white/50 '
           />
           <div className='flex-col space-y-2'>
-            <div className='flex flex-row flex-wrap items-center justify-between gap-y-1.5 gap-x-7 text-lg font-semibold dark:text-white '>
+            <div className='flex flex-row flex-wrap items-center justify-between gap-x-7 gap-y-1.5 text-lg font-semibold dark:text-white '>
               <h3 className='pr-4'>{work.name}</h3>
               {isWork ? (
                 <div>
@@ -89,8 +89,8 @@ export const Projects = ({ isWork, work }: IProjectProps): JSX.Element => {
 
         {(work.websiteUrl || work.githubUrl) && (
           <a
-            className='border-accent bg-accent text-tertiary hover:bg-secondary hover:text-accent absolute -top-2 -right-2 hidden rounded-full border-[1px] p-1.5 opacity-0 transition group-hover:block group-hover:opacity-100'
-            href={`https://${work.websiteUrl || work.githubUrl}`}
+            className='border-accent bg-accent text-tertiary hover:bg-secondary hover:text-accent absolute -right-2 -top-2 hidden rounded-full border-[1px] p-1.5 opacity-0 transition group-hover:block group-hover:opacity-100'
+            href={`${work.websiteUrl || work.githubUrl}`}
             target='_blank'
             rel='noopener noreferrer'>
             <ArrowTopRightOnSquareIcon className='h-4 w-4 dark:invert' />
